@@ -33,7 +33,6 @@
         "zendframework/zend-servicemanager": ">=2.2.2",
         "zendframework/zend-stdlib": ">=2.2.2",
         "zendframework/zend-text": ">=2.2.2",
-        "zendframework/zend-version": ">=2.2.2",
         "zendframework/zend-view": ">=2.2.2",
         "zendframework/zend-http": ">=2.2.2"
     },
