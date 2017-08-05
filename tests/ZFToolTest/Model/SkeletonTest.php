@@ -1,9 +1,10 @@
 <?php
 namespace ZFToolTest\Model;
 
+use PHPUnit\Framework\TestCase;
 use ZFTool\Model\Skeleton;
 
-class SkeletonTest extends \PHPUnit_Framework_TestCase
+class SkeletonTest extends TestCase
 {
 
     public function testGetLastCommit()
@@ -67,14 +68,15 @@ class SkeletonTest extends \PHPUnit_Framework_TestCase
             'bar'
         );
         $export = Skeleton::exportConfig($config);
+
         $expected = <<<EOD
 array(
     'foo' => array(
         'foo2' => 'bar2',
-        'foo3' => 'bar3'
-        ),
-    'bar'
-    )
+        'foo3' => 'bar3',
+    ),
+    'bar',
+)
 EOD;
         $this->assertEquals($expected, $export);
     }

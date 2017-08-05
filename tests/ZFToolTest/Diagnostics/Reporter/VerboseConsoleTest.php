@@ -1,6 +1,7 @@
 <?php
 namespace ZFToolTest\Diagnostics\Reporter;
 
+use PHPUnit\Framework\TestCase;
 use ZFTool\Diagnostics\Reporter\VerboseConsole;
 use ZendDiagnostics\Result\Collection;
 use ZendDiagnostics\Result\Failure;
@@ -16,7 +17,7 @@ require_once __DIR__.'/../TestAsset/AlwaysSuccessCheck.php';
 require_once __DIR__.'/../TestAsset/ConsoleAdapter.php';
 require_once __DIR__.'/../TestAsset/UnknownResult.php';
 
-class VerboseConsoleTest extends \PHPUnit_Framework_TestCase
+class VerboseConsoleTest extends TestCase
 {
     /**
      * @var ConsoleAdapter

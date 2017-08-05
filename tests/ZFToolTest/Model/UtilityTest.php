@@ -1,9 +1,10 @@
 <?php
 namespace ZFToolTest\Model;
 
+use PHPUnit\Framework\TestCase;
 use ZFTool\Model\Utility;
 
-class UtilityTest extends \PHPUnit_Framework_TestCase
+class UtilityTest extends TestCase
 {
 
     protected $tmp;

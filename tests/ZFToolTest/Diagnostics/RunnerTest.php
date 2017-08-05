@@ -3,6 +3,7 @@ namespace ZFToolTest\Diagnostics;
 
 use ZFTool\Diagnostics\Config;
 use ZFTool\Diagnostics\Runner;
+use PhpUnit\Framework\TestCase;
 
 require_once __DIR__.'/TestAsset/UnknownResult.php';
 
@@ -12,7 +13,7 @@ require_once __DIR__.'/TestAsset/UnknownResult.php';
  * @see ZendDiagnostics\Runner\Runner
  * @see ZendDiagnosticsTest\RunnerTest
  */
-class RunnerTest extends \PHPUnit_Framework_TestCase
+class RunnerTest extends TestCase
 {
     /**
      * @var Runner
@@ -50,7 +51,7 @@ class RunnerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(200, $newConfig->getCatchErrorSeverity());
         $this->assertEquals(200, $this->runner->getCatchErrorSeverity());
 
-        $this->setExpectedException('ZFTool\Diagnostics\Exception\InvalidArgumentException');
+        $this->expectException('ZFTool\Diagnostics\Exception\InvalidArgumentException');
         $this->runner->setConfig('foo');
     }
 }

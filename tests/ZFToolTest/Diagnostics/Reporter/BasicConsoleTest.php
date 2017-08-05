@@ -2,6 +2,7 @@
 namespace ZFToolTest\Diagnostics\Reporter;
 
 use ArrayObject;
+use PHPUnit\Framework\TestCase;
 use Zend\Console\Charset\Ascii;
 use ZendDiagnostics\Result\Collection;
 use ZendDiagnostics\Result\Failure;
@@ -18,7 +19,7 @@ require_once __DIR__.'/../TestAsset/ConsoleAdapter.php';
 require_once __DIR__.'/../TestAsset/DummyReporter.php';
 require_once __DIR__.'/../TestAsset/UnknownResult.php';
 
-class BasicConsoleTest extends \PHPUnit_Framework_TestCase
+class BasicConsoleTest extends TestCase
 {
     /**
      * @var \ZFToolTest\Diagnostics\TestAssets\ConsoleAdapter

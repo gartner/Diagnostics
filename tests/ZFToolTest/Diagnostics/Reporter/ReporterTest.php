@@ -1,6 +1,7 @@
 <?php
 namespace ZFToolTest\Diagnostics\Reporter;
 
+use PHPUnit\Framework\TestCase;
 use ZFTool\Diagnostics\Runner;
 use ZFToolTest\Diagnostics\TestAsset\AlwaysSuccessCheck;
 use ZFToolTest\Diagnostics\TestAssets\DummyReporter;
@@ -8,7 +9,7 @@ use ZFToolTest\Diagnostics\TestAssets\DummyReporter;
 require_once __DIR__.'/../TestAsset/DummyReporter.php';
 require_once __DIR__.'/../TestAsset/AlwaysSuccessCheck.php';
 
-class ReporterTest extends \PHPUnit_Framework_TestCase
+class ReporterTest extends TestCase
 {
     public function testReporterAttaching()
     {
