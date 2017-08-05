@@ -2,6 +2,7 @@
 
 namespace ZFTool\Controller;
 
+use Interop\Container\ContainerInterface;
 use Zend\Console\Adapter\AdapterInterface;
 use Zend\Console\ColorInterface;
 use Zend\Console\Request as ConsoleRequest;
@@ -26,15 +27,39 @@ use ZFTool\Diagnostics\Runner;
 
 class DiagnosticsController extends AbstractActionController
 {
+    /** @var  AdapterInterface */
+    protected $console;
+    
+    /** @var  array */
+    protected $config;
+    
+    /** @var  ModuleManager */
+    protected $moduleManager;
+    
+    /** @var  ContainerInterface */
+    protected $serviceLocator;
+    
+    public function __construct(
+        AdapterInterface $console, 
+        array $config, 
+        ModuleManager $moduleManager,
+        ContainerInterface $serviceLocator
+    ) {
+        $this->console = $console;
+        $this->config = $config;
+        $this->moduleManager = $moduleManager;
+        $this->serviceLocator = $serviceLocator;
+    }
+
     public function runAction()
     {
-        $sm = $this->getServiceLocator();
+        //$sm = $this->getServiceLocator();
         /* @var $console AdapterInterface */
         /* @var $config array */
         /* @var $mm ModuleManager */
-        $console = $sm->get('console');
-        $config = $sm->get('Configuration');
-        $mm = $sm->get('ModuleManager');
+        $console = $this->console;
+        $config = $this->config;
+        $mm = $this->moduleManager;
 
         $verbose        = $this->params()->fromRoute('verbose', false);
         $debug          = $this->params()->fromRoute('debug', false);
@@ -156,8 +181,8 @@ class DiagnosticsController extends AbstractActionController
                 }
 
                 // Try to expand check identifier using Service Locator
-                if (is_string($testName) && $sm->has($testName)) {
-                    $check = $sm->get($testName);
+                if (is_string($testName) && $this->serviceLocator->has($testName)) {
+                    $check = $this->serviceLocator->get($testName);
 
                 // Try to use the ZendDiagnostics namespace
                 } elseif (is_string($testName) && class_exists('ZendDiagnostics\\Check\\' . $testName)) {

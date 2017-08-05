@@ -14,8 +14,10 @@ return array(
             'ZFTool\Controller\Classmap'    => 'ZFTool\Controller\ClassmapController',
             'ZFTool\Controller\Create'      => 'ZFTool\Controller\CreateController',
             'ZFTool\Controller\Install'     => 'ZFTool\Controller\InstallController',
-            'ZFTool\Controller\Diagnostics' => 'ZFTool\Controller\DiagnosticsController',
         ),
+        'factories' => [
+            'ZFTool\Controller\Diagnostics' => ZFTool\Controller\DiagnosticsControllerFactory::class,
+        ],
     ),
 
     'view_manager' => array(
