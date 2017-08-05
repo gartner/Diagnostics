@@ -91,7 +91,7 @@ class Skeleton
         static::$valueGenerator->setValue($config);
         static::$valueGenerator->setArrayDepth($indent);
 
-        return static::$valueGenerator;
+        return static::$valueGenerator->generate();
     }
 
     /**
