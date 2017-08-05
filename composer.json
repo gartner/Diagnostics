@@ -1,8 +1,8 @@
 {
     "name": "zendframework/zftool",
-    "description": "Utility module for Zend Framework 2 applications.",
+    "description": "Utility module for Zend Framework 3 applications.",
     "keywords": [
-        "zf2",
+        "zf3",
         "tool"
     ],
     "homepage": "http://framework.zend.com/",
@@ -23,7 +23,7 @@
         "zendframework/zenddiagnostics" : ">=1.0.0",
         "zendframework/zend-code": ">=2.2.2",
         "zendframework/zend-config": ">=2.2.2",
-        "zendframework/zend-console": ">=2.2.2",
+        "zendframework/zend-console": "^2.6",
         "zendframework/zend-file": ">=2.2.2",
         "zendframework/zend-form": ">=2.2.2",
         "zendframework/zend-loader": ">=2.2.2",
@@ -34,10 +34,11 @@
         "zendframework/zend-stdlib": ">=2.2.2",
         "zendframework/zend-text": ">=2.2.2",
         "zendframework/zend-view": ">=2.2.2",
-        "zendframework/zend-http": ">=2.2.2"
+        "zendframework/zend-http": ">=2.2.2",
+        "zendframework/zend-mvc-console": "^1.1"
     },
     "require-dev": {
-        "phpunit/PHPUnit": "3.7.*"
+        "phpunit/phpunit": "~6.2"
     },
     "bin": ["zf.php"]
 }
