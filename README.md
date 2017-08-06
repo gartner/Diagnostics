@@ -1,3 +1,10 @@
+  Zend Framework 3
+====================
+This version can run the Diagnostics from in a Zend Framework 3-based project.
+
+All the code-generating stuff does not work.
+
+
   Zend Framework 2 Tool
 =========================
 
