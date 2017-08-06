@@ -40,26 +40,22 @@ class DiagnosticsController extends AbstractActionController
     protected $serviceLocator;
     
     public function __construct(
-        AdapterInterface $console, 
-        array $config, 
+        array $config,
         ModuleManager $moduleManager,
-        ContainerInterface $serviceLocator
+        ContainerInterface $serviceLocator,
+        AdapterInterface $console = null
     ) {
-        $this->console = $console;
-        $this->config = $config;
-        $this->moduleManager = $moduleManager;
+        $this->config         = $config;
+        $this->moduleManager  = $moduleManager;
         $this->serviceLocator = $serviceLocator;
+        $this->console        = $console;
     }
 
     public function runAction()
     {
-        //$sm = $this->getServiceLocator();
-        /* @var $console AdapterInterface */
-        /* @var $config array */
-        /* @var $mm ModuleManager */
         $console = $this->console;
-        $config = $this->config;
-        $mm = $this->moduleManager;
+        $config  = $this->config;
+        $mm      = $this->moduleManager;
 
         $verbose        = $this->params()->fromRoute('verbose', false);
         $debug          = $this->params()->fromRoute('debug', false);
@@ -93,7 +89,7 @@ class DiagnosticsController extends AbstractActionController
 
             if (empty($config)) {
                 $m = new ConsoleModel();
-                $m->setResult($console->colorize(sprintf(
+                $m->setResult($this->colorize(sprintf(
                     "Unable to find a group of diagnostic checks called \"%s\". Try to use module name (i.e. \"%s\").\n",
                     $checkGroupName,
                     'Application'
@@ -108,7 +104,7 @@ class DiagnosticsController extends AbstractActionController
         if (empty($config)) {
             $m = new ConsoleModel();
             $m->setResult(
-                $console->colorize(
+                $this->colorize(
                     "There are no diagnostic checks currently enabled for this application - please add one or more " .
                     "entries into config \"diagnostics\" array or add getDiagnostics() method to your Module class. " .
                     "\n\nMore info: https://github.com/zendframework/ZFTool/blob/master/docs/" .
@@ -182,7 +178,11 @@ class DiagnosticsController extends AbstractActionController
 
                 // Try to expand check identifier using Service Locator
                 if (is_string($testName) && $this->serviceLocator->has($testName)) {
-                    $check = $this->serviceLocator->get($testName);
+                    if (0 < count($params)) {
+                        $check = $this->serviceLocator->build($testName, $params);
+                    } else {
+                        $check = $this->serviceLocator->get($testName);
+                    }
 
                 // Try to use the ZendDiagnostics namespace
                 } elseif (is_string($testName) && class_exists('ZendDiagnostics\\Check\\' . $testName)) {
@@ -239,9 +239,9 @@ class DiagnosticsController extends AbstractActionController
 
         if (!$quiet && $this->getRequest() instanceof ConsoleRequest) {
             if ($verbose || $debug) {
-                $runner->addReporter(new VerboseConsole($console, $debug));
+                $runner->addReporter(new VerboseConsole($this->console, $debug));
             } else {
-                $runner->addReporter(new BasicConsole($console));
+                $runner->addReporter(new BasicConsole($this->console));
             }
         }
 
@@ -335,4 +335,14 @@ class DiagnosticsController extends AbstractActionController
             'passed' => $results->getFailureCount() === 0,
         );
     }
+
+    protected function colorize($string, $color = null, $bgColor = null)
+    {
+        if ($this->console instanceof AdapterInterface) {
+            return $this->console->colorize($string, $color, $bgColor);
+        }
+
+        return $string;
+    }
+
 }

@@ -72,7 +72,7 @@ class DiagnosticsControllerTest extends TestCase
             'action'     => 'run'
         ));
         $event->setRouteMatch($this->routeMatch);
-        $this->controller = new class($this->console, $this->config, $this->moduleManager, $this->sm)
+        $this->controller = new class($this->config, $this->moduleManager, $this->sm, $this->console)
             extends DiagnosticsController
             {
                 public function setConfig($config) {
