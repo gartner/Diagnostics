@@ -1,38 +1,28 @@
 {
-    "name": "palustris/ZFDiagnostics",
-    "description": "Utility module for Zend Framework 3 applications.",
+    "name": "palustris/Diagnostics",
+    "description": "Use ZFDiagnostics in a Zend Framework 3 application.",
     "keywords": [
         "zf3",
-        "tool"
+        "tool",
+        "Zend Framework 3",
+        "ZFDiagnostics"
     ],
-    "homepage": "http://framework.zend.com/",
+    "homepage": "https://github.com/gartner/Diagnostics/",
     "license": "BSD-3-Clause",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.zendframework.com/"
-        }
-    ],
     "autoload": {
         "psr-0": {
             "ZFTool\\": "src/"
         }
     },
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=7.0.0",
         "zendframework/zenddiagnostics" : ">=1.0.0",
-        "zendframework/zend-code": ">=2.2.2",
         "zendframework/zend-config": ">=2.2.2",
         "zendframework/zend-console": "^2.6",
-        "zendframework/zend-file": ">=2.2.2",
-        "zendframework/zend-form": ">=2.2.2",
-        "zendframework/zend-loader": ">=2.2.2",
         "zendframework/zend-modulemanager": ">=2.2.2",
         "zendframework/zend-mvc": ">=2.2.2",
-        "zendframework/zend-serializer": ">=2.2.2",
         "zendframework/zend-servicemanager": ">=2.2.2",
         "zendframework/zend-stdlib": ">=2.2.2",
-        "zendframework/zend-text": ">=2.2.2",
         "zendframework/zend-view": ">=2.2.2",
         "zendframework/zend-http": ">=2.2.2",
         "zendframework/zend-mvc-console": "^1.1"
