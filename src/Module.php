@@ -18,7 +18,7 @@ class Module implements
     ConsoleBannerProviderInterface,
     BootstrapListenerInterface
 {
-    const NAME = 'ZFTool - Zend Framework 2 command line Tool';
+    const NAME = 'palustrisDiagnostics - Zend Framework 3 command line Tool';
 
     /**
      * @var ServiceLocatorInterface
@@ -32,7 +32,7 @@ class Module implements
 
     public function getConfig()
     {
-        return include __DIR__ . '/../../config/module.config.php';
+        return include __DIR__ . '/../config/module.config.php';
     }
 
     public function getAutoloaderConfig()
