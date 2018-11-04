@@ -1,0 +1,13 @@
+<phpunit bootstrap="tests/Bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="Diagnostics Test Suite">
+            <directory>./ZFToolTest</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <group>disable</group>
+        </exclude>
+    </groups>
+</phpunit>
