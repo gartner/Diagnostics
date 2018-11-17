@@ -34,7 +34,7 @@ return array(
 
     'diagnostics' => array(
         'ZF' => array(
-            'PHP Version' => array('PhpVersion', '7.0.0'),
+            'PHP Version' => array('PhpVersion', '7.2.0'),
         )
     )
 );
