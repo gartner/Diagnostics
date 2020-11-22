@@ -1,5 +1,5 @@
 {
-    "name": "palustris/Diagnostics",
+    "name": "palustris/diagnostics",
     "description": "Use ZFDiagnostics in a Zend Framework 3 application.",
     "keywords": [
         "zf3",
@@ -16,26 +16,29 @@
     },
     "require": {
         "php": ">=7.3.0",
-        "zendframework/zenddiagnostics" : "^1.3",
-        "zendframework/zend-config": "^3.2",
-        "zendframework/zend-console": "^2.7",
-        "zendframework/zend-modulemanager": "^2.8",
-        "zendframework/zend-mvc": "^3.1",
-        "zendframework/zend-servicemanager": "^3.3",
-        "zendframework/zend-stdlib": "^3.2",
-        "zendframework/zend-view": "^2.10",
-        "zendframework/zend-http": "^2.8",
-        "zendframework/zend-mvc-console": "^1.2",
-        "zendframework/zend-validator": "^2.10",
-        "zendframework/zend-escaper": "^2.6",
-        "zendframework/zend-loader": "^2.6",
-        "zendframework/zend-eventmanager": "^3.2",
-        "zendframework/zend-router": "^3.2",
-        "zendframework/zend-text": "^2.7",
-        "zendframework/zend-uri": "^2.6"
+        "laminas/laminas-diagnostics": "^1.3",
+        "laminas/laminas-config": "^3.2",
+        "laminas/laminas-console": "^2.7",
+        "laminas/laminas-modulemanager": "^2.8",
+        "laminas/laminas-mvc": "^3.1 || ^4.0.x-dev",
+        "laminas/laminas-servicemanager": "^3.3",
+        "laminas/laminas-stdlib": "^3.2",
+        "laminas/laminas-view": "^2.10",
+        "laminas/laminas-http": "^2.8",
+        "laminas/laminas-mvc-console": "^1.2",
+        "laminas/laminas-validator": "^2.10",
+        "laminas/laminas-escaper": "^2.6",
+        "laminas/laminas-loader": "^2.6",
+        "laminas/laminas-eventmanager": "^3.2",
+        "laminas/laminas-router": "^3.2 || ^4.0",
+        "laminas/laminas-text": "^2.7",
+        "laminas/laminas-uri": "^2.6",
+        "laminas/laminas-dependency-plugin": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.4"
     },
-    "bin": ["zf.php"]
+    "bin": [
+        "zf.php"
+    ]
 }
