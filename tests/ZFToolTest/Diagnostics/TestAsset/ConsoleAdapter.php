@@ -1,7 +1,7 @@
 <?php
 namespace ZFToolTest\Diagnostics\TestAssets;
 
-use Zend\Console\Adapter\AbstractAdapter;
+use Laminas\Console\Adapter\AbstractAdapter;
 
 class ConsoleAdapter extends AbstractAdapter
 {

@@ -1,9 +1,9 @@
 <?php
 namespace ZFToolTest\Diagnostics\TestAsset;
 
-use ZendDiagnostics\Result\Success;
-use ZendDiagnostics\Check\AbstractCheck;
-use ZendDiagnostics\Check\CheckInterface;
+use Laminas\Diagnostics\Result\Success;
+use Laminas\Diagnostics\Check\AbstractCheck;
+use Laminas\Diagnostics\Check\CheckInterface;
 
 class AlwaysSuccessCheck extends AbstractCheck implements CheckInterface
 {

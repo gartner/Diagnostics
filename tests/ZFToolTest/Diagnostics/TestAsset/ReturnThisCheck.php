@@ -1,7 +1,7 @@
 <?php
 namespace ZFToolTest\Diagnostics\TestAsset;
 
-use ZendDiagnostics\Check\CheckInterface;
+use Laminas\Diagnostics\Check\CheckInterface;
 
 class ReturnThisCheck implements CheckInterface
 {

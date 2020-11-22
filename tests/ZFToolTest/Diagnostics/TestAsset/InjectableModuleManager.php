@@ -2,7 +2,7 @@
 
 namespace ZFToolTest\TestAsset;
 
-use Zend\ModuleManager\ModuleManager;
+use Laminas\ModuleManager\ModuleManager;
 
 /**
  * Module manager

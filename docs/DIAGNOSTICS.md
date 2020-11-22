@@ -208,8 +208,8 @@ Application Service Manager. For example, we could have the following check clas
 <?php
 namespace Application\Check;
 
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\ServiceLocatorAwareInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 use ZFTool\Diagnostics\Check\AbstractTest;
 
 class CheckUserModule extends AbstractTest implements ServiceLocatorAwareInterface

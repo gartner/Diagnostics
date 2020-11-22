@@ -2,13 +2,13 @@
 
 namespace ZFTool;
 
-use Zend\Console\Adapter\AdapterInterface as ConsoleAdapterInterface;
-use Zend\EventManager\EventInterface;
-use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
-use Zend\ModuleManager\Feature\ConsoleBannerProviderInterface;
-use Zend\ModuleManager\Feature\BootstrapListenerInterface;
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\Console\Adapter\AdapterInterface as ConsoleAdapterInterface;
+use Laminas\EventManager\EventInterface;
+use Laminas\ModuleManager\Feature\ConsoleUsageProviderInterface;
+use Laminas\ModuleManager\Feature\ConsoleBannerProviderInterface;
+use Laminas\ModuleManager\Feature\BootstrapListenerInterface;
+use Laminas\ModuleManager\Feature\ConfigProviderInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 class Module implements
     ConsoleUsageProviderInterface,

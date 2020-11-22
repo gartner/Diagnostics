@@ -3,23 +3,23 @@
 namespace ZFTool\Controller;
 
 use Interop\Container\ContainerInterface;
-use Zend\Console\Adapter\AdapterInterface;
-use Zend\Console\ColorInterface;
-use Zend\Console\Request as ConsoleRequest;
-use Zend\Http\Header\Accept;
-use Zend\Http\Request;
-use Zend\ModuleManager\ModuleManager;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ConsoleModel;
-use Zend\View\Model\JsonModel;
-use Zend\View\Model\ViewModel;
-use ZendDiagnostics\Check\Callback;
-use ZendDiagnostics\Check\CheckInterface;
-use ZendDiagnostics\Result\Collection;
-use ZendDiagnostics\Result\FailureInterface;
-use ZendDiagnostics\Result\ResultInterface;
-use ZendDiagnostics\Result\SuccessInterface;
-use ZendDiagnostics\Result\WarningInterface;
+use Laminas\Console\Adapter\AdapterInterface;
+use Laminas\Console\ColorInterface;
+use Laminas\Console\Request as ConsoleRequest;
+use Laminas\Http\Header\Accept;
+use Laminas\Http\Request;
+use Laminas\ModuleManager\ModuleManager;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ConsoleModel;
+use Laminas\View\Model\JsonModel;
+use Laminas\View\Model\ViewModel;
+use Laminas\Diagnostics\Check\Callback;
+use Laminas\Diagnostics\Check\CheckInterface;
+use Laminas\Diagnostics\Result\Collection;
+use Laminas\Diagnostics\Result\FailureInterface;
+use Laminas\Diagnostics\Result\ResultInterface;
+use Laminas\Diagnostics\Result\SuccessInterface;
+use Laminas\Diagnostics\Result\WarningInterface;
 use ZFTool\Diagnostics\Exception\RuntimeException;
 use ZFTool\Diagnostics\Reporter\BasicConsole;
 use ZFTool\Diagnostics\Reporter\VerboseConsole;
@@ -141,7 +141,7 @@ class DiagnosticsController extends AbstractActionController
                     if (!$check instanceof CheckInterface) {
                         throw new RuntimeException(
                             'Cannot use object of class "' . get_class($check). '" as check. '.
-                            'Expected instance of ZendDiagnostics\Check\CheckInterface'
+                            'Expected instance of Laminas\Diagnostics\Check\CheckInterface'
                         );
 
                     }
@@ -185,8 +185,8 @@ class DiagnosticsController extends AbstractActionController
                     }
 
                 // Try to use the ZendDiagnostics namespace
-                } elseif (is_string($testName) && class_exists('ZendDiagnostics\\Check\\' . $testName)) {
-                    $class = new \ReflectionClass('ZendDiagnostics\\Check\\' . $testName);
+                } elseif (is_string($testName) && class_exists('Laminas\\Diagnostics\\Check\\' . $testName)) {
+                    $class = new \ReflectionClass('Laminas\\Diagnostics\\Check\\' . $testName);
                     $check = $class->newInstanceArgs($params);
 
                 // Try to use the ZFTool namespace
@@ -219,7 +219,7 @@ class DiagnosticsController extends AbstractActionController
                     // not a real check
                     throw new RuntimeException(
                         'The check object of class '.get_class($check).' does not implement '.
-                        'ZendDiagnostics\Check\CheckInterface'
+                        'Laminas\Diagnostics\Check\CheckInterface'
                     );
                 }
 

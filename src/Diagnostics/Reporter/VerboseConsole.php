@@ -2,17 +2,17 @@
 namespace ZFTool\Diagnostics\Reporter;
 
 use ArrayObject;
-use Zend\Console\Adapter\AdapterInterface as Console;
-use Zend\Console\ColorInterface as Color;
-use Zend\Stdlib\StringUtils;
-use ZendDiagnostics\Check\CheckInterface;
-use ZendDiagnostics\Result\Collection as ResultsCollection;
-use ZendDiagnostics\Result\FailureInterface as Failure;
-use ZendDiagnostics\Result\ResultInterface;
-use ZendDiagnostics\Result\SkipInterface as Skip;
-use ZendDiagnostics\Result\SuccessInterface as Success;
-use ZendDiagnostics\Result\WarningInterface as Warning;
-use ZendDiagnostics\Runner\Reporter\ReporterInterface;
+use Laminas\Console\Adapter\AdapterInterface as Console;
+use Laminas\Console\ColorInterface as Color;
+use Laminas\Stdlib\StringUtils;
+use Laminas\Diagnostics\Check\CheckInterface;
+use Laminas\Diagnostics\Result\Collection as ResultsCollection;
+use Laminas\Diagnostics\Result\FailureInterface as Failure;
+use Laminas\Diagnostics\Result\ResultInterface;
+use Laminas\Diagnostics\Result\SkipInterface as Skip;
+use Laminas\Diagnostics\Result\SuccessInterface as Success;
+use Laminas\Diagnostics\Result\WarningInterface as Warning;
+use Laminas\Diagnostics\Runner\Reporter\ReporterInterface;
 
 class VerboseConsole implements ReporterInterface
 {

@@ -10,7 +10,7 @@ require_once __DIR__.'/TestAsset/UnknownResult.php';
 /**
  * Class RunnerTest
  *
- * @see ZendDiagnostics\Runner\Runner
+ * @see Laminas\Diagnostics\Runner\Runner
  * @see ZendDiagnosticsTest\RunnerTest
  */
 class RunnerTest extends TestCase

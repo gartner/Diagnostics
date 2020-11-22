@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace ZFTool\Controller;
 
 use Interop\Container\ContainerInterface;
-use Zend\Console\Adapter\AbstractAdapter;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\Console\Adapter\AbstractAdapter;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class DiagnosticsControllerFactory implements FactoryInterface
 {

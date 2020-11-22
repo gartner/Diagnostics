@@ -1,11 +1,11 @@
 <?php
 namespace ZFToolTest\Diagnostics\TestAssets;
 
-use ZendDiagnostics\Runner\Reporter\ReporterInterface;
+use Laminas\Diagnostics\Runner\Reporter\ReporterInterface;
 use ArrayObject;
-use ZendDiagnostics\Check\CheckInterface;
-use ZendDiagnostics\Result\ResultInterface;
-use ZendDiagnostics\Result\Collection as ResultsCollection;
+use Laminas\Diagnostics\Check\CheckInterface;
+use Laminas\Diagnostics\Result\ResultInterface;
+use Laminas\Diagnostics\Result\Collection as ResultsCollection;
 
 class DummyReporter implements ReporterInterface
 {

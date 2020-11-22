@@ -47,4 +47,4 @@ if (file_exists("$basePath/config/application.config.php")) {
     );
 }
 
-Zend\Mvc\Application::init($appConfig)->run();
+Laminas\Mvc\Application::init($appConfig)->run();

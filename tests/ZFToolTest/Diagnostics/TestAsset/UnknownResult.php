@@ -1,7 +1,7 @@
 <?php
 namespace ZFToolTest\Diagnostics\TestAsset;
 
-use ZendDiagnostics\Result\AbstractResult;
+use Laminas\Diagnostics\Result\AbstractResult;
 
 class UnknownResult extends AbstractResult
 {

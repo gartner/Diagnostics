@@ -2,9 +2,9 @@
 namespace ZFTool\Diagnostics;
 
 use Traversable;
-use ZendDiagnostics\Runner\Reporter\ReporterInterface;
-use ZendDiagnostics\Runner\Runner as ZendDiagnosticsRunner;
-use ZendDiagnostics\Result\Collection as ResultsCollection;
+use Laminas\Diagnostics\Runner\Reporter\ReporterInterface;
+use Laminas\Diagnostics\Runner\Runner as ZendDiagnosticsRunner;
+use Laminas\Diagnostics\Result\Collection as ResultsCollection;
 
 class Runner extends ZendDiagnosticsRunner
 {

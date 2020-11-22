@@ -1,7 +1,7 @@
 <?php
 namespace ZFTool\Diagnostics;
 
-use Zend\Stdlib\AbstractOptions;
+use Laminas\Stdlib\AbstractOptions;
 
 class Config extends AbstractOptions implements ConfigInterface
 {

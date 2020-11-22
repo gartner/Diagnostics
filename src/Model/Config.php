@@ -2,8 +2,8 @@
 
 namespace ZFTool\Model;
 
-use Zend\Config\Writer\PhpArray;
-use Zend\Stdlib\ArrayUtils;
+use Laminas\Config\Writer\PhpArray;
+use Laminas\Stdlib\ArrayUtils;
 
 class Config
 {

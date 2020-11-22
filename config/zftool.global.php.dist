@@ -5,7 +5,7 @@ return array(
     'router' => array(
         'routes' => array(
             'zftool-diagnostics' => array(
-                'type'  => 'Zend\Mvc\Router\Http\Literal',
+                'type'  => 'Laminas\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route' => '/diagnostics',
                     'defaults' => array(

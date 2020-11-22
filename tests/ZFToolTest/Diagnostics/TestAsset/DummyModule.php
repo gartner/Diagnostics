@@ -2,9 +2,9 @@
 
 namespace ZFToolTest;
 
-use ZendDiagnostics\Result\Failure;
-use ZendDiagnostics\Result\Success;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\Diagnostics\Result\Failure;
+use Laminas\Diagnostics\Result\Success;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 class DummyModule
 {

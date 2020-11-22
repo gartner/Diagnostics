@@ -3,11 +3,11 @@ namespace ZFToolTest\Diagnostics\Reporter;
 
 use ArrayObject;
 use PHPUnit\Framework\TestCase;
-use Zend\Console\Charset\Ascii;
-use ZendDiagnostics\Result\Collection;
-use ZendDiagnostics\Result\Failure;
-use ZendDiagnostics\Result\Success;
-use ZendDiagnostics\Result\Warning;
+use Laminas\Console\Charset\Ascii;
+use Laminas\Diagnostics\Result\Collection;
+use Laminas\Diagnostics\Result\Failure;
+use Laminas\Diagnostics\Result\Success;
+use Laminas\Diagnostics\Result\Warning;
 use ZFTool\Diagnostics\Reporter\BasicConsole;
 use ZFToolTest\Diagnostics\TestAsset\UnknownResult as Unknown;
 use ZFToolTest\Diagnostics\TestAsset\AlwaysSuccessCheck;
@@ -32,7 +32,7 @@ class BasicConsoleTest extends TestCase
     protected $reporter;
 
     /**
-     * @var \Zend\EventManager\EventManager;
+     * @var \Laminas\EventManager\EventManager;
      */
     protected $em;
 

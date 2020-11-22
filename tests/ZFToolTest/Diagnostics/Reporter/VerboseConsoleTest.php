@@ -3,14 +3,14 @@ namespace ZFToolTest\Diagnostics\Reporter;
 
 use PHPUnit\Framework\TestCase;
 use ZFTool\Diagnostics\Reporter\VerboseConsole;
-use ZendDiagnostics\Result\Collection;
-use ZendDiagnostics\Result\Failure;
-use ZendDiagnostics\Result\Success;
-use ZendDiagnostics\Result\Warning;
+use Laminas\Diagnostics\Result\Collection;
+use Laminas\Diagnostics\Result\Failure;
+use Laminas\Diagnostics\Result\Success;
+use Laminas\Diagnostics\Result\Warning;
 use ZFToolTest\Diagnostics\TestAsset\UnknownResult as Unknown;
 use ZFToolTest\Diagnostics\TestAsset\AlwaysSuccessCheck;
 use ZFToolTest\Diagnostics\TestAssets\ConsoleAdapter;
-use Zend\Console\Charset\Ascii;
+use Laminas\Console\Charset\Ascii;
 use ArrayObject;
 
 require_once __DIR__.'/../TestAsset/AlwaysSuccessCheck.php';
